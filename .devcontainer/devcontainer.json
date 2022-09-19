@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/typescript-node
 {
-	"name": "Node.js & TypeScript",
+	"name": "NGRX EXAMPLE",
 	"build": {
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick a Node version: 18, 16, 14.
@@ -23,6 +23,10 @@
 		}
 	},
 
+	// The postCreateCommand actions are run once the container is created, 
+	//so you can also use the property to run commands like npm install 
+	//or to execute a shell script in your source tree (if you have mounted it).
+	"postCreateCommand": "npm install",
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
