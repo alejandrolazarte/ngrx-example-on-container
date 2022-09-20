@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { counterReducer } from './counter.reducer';
+import { counterReducer } from './my-counter/counter.reducer';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
@@ -16,7 +16,7 @@ import { MaterialModule } from './material';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    StoreModule.forRoot({ counter: counterReducer }),
     MaterialModule,
     BrowserAnimationsModule
   ],
