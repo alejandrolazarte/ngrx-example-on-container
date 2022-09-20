@@ -7,6 +7,7 @@ import { counterReducer } from './my-counter/counter.reducer';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MaterialModule } from './material';
     BrowserModule,
     AppRoutingModule,
     StoreModule.forRoot({ counter: counterReducer }),
+    FormsModule,
     MaterialModule,
     BrowserAnimationsModule
   ],

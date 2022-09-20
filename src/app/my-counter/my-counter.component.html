@@ -1,8 +1,19 @@
 <mat-card>
     <div>Current Count: {{ (count$ | async)?.counter }}</div>
-    <mat-card-footer>
-        <button mat-button color="primary" (click)="increment()">Increment</button>
-        <button mat-button color="primary" (click)="decrement()">Decrement</button>
-        <button mat-button color="primary" (click)="reset()">Reset Counter</button>
-    </mat-card-footer>
+    <div class="buttons">
+        <button mat-button color="primary" mat-raised-button (click)="increment()">Increment</button>
+        <button mat-button color="primary" mat-raised-button (click)="decrement()">Decrement</button>
+        <button mat-button color="primary" mat-raised-button (click)="reset()">Reset Counter</button>
+    </div>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <input matInput placeholder="counter" (keydown)="$event.keyCode == 69 ? false : true" type="number"
+            [(ngModel)]="inputCounter">
+    </mat-form-field>
+
+    <div class="buttons">
+        <button mat-button color="primary" mat-raised-button (click)="addToCounter()">Add to counter</button>
+    </div>
+
 </mat-card>
