@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { AppState } from './counter.state';
 import { counterFeatureKey } from './counter.reducer';
 import { increment, decrement, reset, add } from './counter.actions';
@@ -12,11 +11,13 @@ import { increment, decrement, reset, add } from './counter.actions';
 })
 export class MyCounterComponent {
 
-  count$: Observable<AppState>
+  count: number = 0;
   inputCounter: number = 0;
 
   constructor(private store: Store<{ counter: AppState }>) {
-    this.count$ = store.select(counterFeatureKey);
+    this.store.select(counterFeatureKey).subscribe((data) => {
+      this.count = data.counter
+    });
   }
 
   public increment(): void {

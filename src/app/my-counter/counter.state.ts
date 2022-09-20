@@ -1,8 +1,10 @@
 
 export interface AppState {
-    counter: number
+    counter: number,
+    title: string
 }
 
 export const initialState : AppState = {
-    counter: 0
+    counter: 0,
+    title: 'Counter App'
 };
