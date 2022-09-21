@@ -16,6 +16,7 @@ export class MyCounterComponent {
 
   constructor(private store: Store<{ counter: AppState }>) {
     this.store.select(counterFeatureKey).subscribe((data) => {
+      console.log("change count");
       this.count = data.counter
     });
   }

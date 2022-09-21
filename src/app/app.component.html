@@ -1,6 +1,18 @@
 <h2>{{ title }}</h2>
-<div  >
+<div>
 
     <app-my-counter></app-my-counter>
 
+    <mat-card >
+        <mat-form-field appearance="fill">
+            <mat-label>Title App</mat-label>
+            <input matInput placeholder="counter" type="text"
+                [(ngModel)]="newTitle">
+        </mat-form-field>
+        
+        <button mat-button color="primary" mat-raised-button (click)="changeText()">Change Title</button>
+    </mat-card>
+
+
 </div>
+
