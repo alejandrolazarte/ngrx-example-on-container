@@ -1,5 +1,5 @@
 <mat-card>
-    <div>Current Count: {{ count }}</div>
+    <div>Current Count: {{ count | async }}</div>
     <div class="buttons">
         <button mat-button color="primary" mat-raised-button (click)="increment()">Increment</button>
         <button mat-button color="primary" mat-raised-button (click)="decrement()">Decrement</button>

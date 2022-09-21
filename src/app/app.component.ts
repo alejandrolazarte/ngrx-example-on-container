@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { changeTitle } from './my-counter/counter.actions';
-import { counterFeatureKey } from './my-counter/counter.reducer';
+import { getTitle } from './my-counter/counter.selectors';
 import { AppState } from './my-counter/counter.state';
 
 @Component({
@@ -10,14 +11,11 @@ import { AppState } from './my-counter/counter.state';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = '';
+  title: Observable<string>;
   newTitle = ''
 
   constructor(private store: Store<{counter : AppState}>) {
-    this.store.select(counterFeatureKey).subscribe((data) => {
-      console.log("change name");
-      this.title = data.title
-    });
+    this.title = this.store.select(getTitle);
   }
 
 
